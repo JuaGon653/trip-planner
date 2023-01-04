@@ -2,7 +2,7 @@ const router = require('express').Router();
 const {Project, Planner} = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.post('/', withAuth, async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const newPlanner = await Planner.create({
             ...req.body,
@@ -13,4 +13,6 @@ router.post('/', withAuth, async (req, res) => {
         res.status(400).json(err);
     }
 });
+
+module.exports = router;
 
