@@ -14,15 +14,24 @@
   <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
       <h1>
-        <a href="/">Start Planning your Roadtrip!</a>
+        {{#if my_plans}}
+          My Plans
+        {{else}}
+          Current Plans
+        {{/if}}
       </h1>
-      <nav>
+      <nav class="display-flex align-center">
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a class="profileLink" href="/dates">profile</a> |
-        <button class="no-button" id="logout">logout</button>
+          {{#if my_plans}}
+            <a class="navLink" href="/">Current Plans</a>
+          {{else}}
+            <a class="navLink" href="/my-plans">My Plans</a>
+          {{/if}}
+          <div id="vl"></div>
+          <a class="navLink" id="logout" href="/logout">Logout</a>
         {{else}}
-        <a href="/login">login</a>
+          <a class="navLink" href="/login">Login</a>
         {{/if}}
       </nav>
     </header>
@@ -30,9 +39,6 @@
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
-    <footer>
-      
-    </footer>
   </div>
 
   <!-- Render script for logged in users only -->
