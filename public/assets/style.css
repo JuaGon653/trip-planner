@@ -233,3 +233,14 @@ img{
     width: 75px;
     height: 75px;
 }
+
+#x-image {
+  position: relative;
+  height: 25px;
+  width: 25px;
+  padding: 3px;
+  top: -235px;
+  left: -290px;
+  background-color: red;
+  border-radius: 25px;
+}
