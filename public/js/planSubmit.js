@@ -20,6 +20,8 @@ const planSubmit = async (event) => {
         })
     })
     .catch(err => console.error('Error:', err));
+
+    document.location.replace('/my-plans');
 }
 
 document.querySelector('#planSubmit').addEventListener('click', planSubmit);
