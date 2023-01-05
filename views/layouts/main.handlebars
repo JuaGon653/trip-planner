@@ -17,7 +17,11 @@
         {{#if my_plans}}
           My Plans
         {{else}}
-          Current Plans
+          {{#if creating_plan}}
+            Creating Plan
+            {{else}}
+            Current Plans
+          {{/if}}
         {{/if}}
       </h1>
       <nav class="display-flex align-center">
@@ -28,7 +32,18 @@
           {{else}}
             <a class="navLink" href="/my-plans">My Plans</a>
           {{/if}}
+
           <div id="vl"></div>
+
+          {{#if creating_plan}}
+            <a class="navLink" href="/">Current Plans</a>
+          {{else}}
+            <a class="navLink" href="/create-plan">Create a Plan</a>
+            
+          {{/if}}
+
+          <div id="vl"></div>
+          
           <a class="navLink" id="logout" href="/logout">Logout</a>
         {{else}}
           <a class="navLink" href="/login">Login</a>
