@@ -59,7 +59,7 @@ router.get('/my-plans', async (req, res) => {
 
 router.get('/create-plan', async (req, res) => {
     try {
-        res.render('create-plan');
+        res.render('create-plan', { logged_in: req.session.logged_in, creating_plan: true});
     } catch (err) {
         res.status(400).json(err);
     }
