@@ -1,3 +1,11 @@
-{{#each itineraries as |itinerary|}}
-{{> itinerary-template itinerary=itinerary my_plans=../my_plans}}
-{{/each}}
+{{#if itineraries}}
+    {{#each itineraries as |itinerary|}}
+    {{> itinerary-template itinerary=itinerary my_plans=../my_plans}}
+    {{/each}}
+{{else}}
+    <h1>No Plans</h1>
+{{/if}}
+
+{{#if my_plans}}
+    <script src="./js/deletePlan.js"></script>
+{{/if}}
