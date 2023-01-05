@@ -16,7 +16,7 @@ Planner.init(
       allowNull: false,
     },
     description: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
     },
     start_date: {
       type: DataTypes.DATE,
