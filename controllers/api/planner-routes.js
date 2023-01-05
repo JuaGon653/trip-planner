@@ -14,13 +14,5 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.get('/', async (req, res) => {
-    try {
-        res.render('create-plan');
-    } catch (err) {
-        res.status(400).json(err);
-    }
-})
-
 module.exports = router;
 
