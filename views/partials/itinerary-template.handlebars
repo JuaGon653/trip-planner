@@ -1,19 +1,14 @@
 <section class="card">
   <!-- Links to specific itinerary by itinerary id -->
-  <a class= href="/itinerary/{{id}}">
-      
-      
-    
-
-      <div class="planAndDate">{{plan_name}}</div>
-
-       <div class="planAndDate">
-         <!--Data from the Calendar api-->
-        {{format_date start_date}}
-      </div>
-
-    
-      <div class="itineraryText" >{{description}}</div>
+  <a class="plan" href="/itinerary/{{id}}">
+    {{plan_name}}
   </a>
+
+  <h2 class="card-date">{{format_date start_date}} -  {{format_date end_date}}</h2>
+
+  <h2 class="itineraryText">{{description}}</h2>
+
+  <h2 class="card-username">- {{user.username}}</h2>
+  
 </section>
 

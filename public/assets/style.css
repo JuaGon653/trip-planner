@@ -10,7 +10,7 @@ body {
   color: #fff;
   font-family: Arial;
   font-size: 12px;
-  background: url(https://images.freeimages.com/images/previews/eea/no-end-street-1408983.jpg) no-repeat center center fixed;
+  background: rgb(37, 43, 45);
   background-size: cover;
 }
 
@@ -101,35 +101,56 @@ h1 a {
   opacity: 0.6;
 }
 */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border-color: orange;
   width: 50%;
-  height: 250px;
-  position: relative;
-  left: 25%;
+  min-height: 250px;
   background-color: #e7ecef;
   border-radius: 10px;
   opacity: 0.8;
   text-align: center;
 }
 
-.planAndDate {
+.plan {
   font-weight: bold;
+  width: fit-content;
   font-size: 35px;
+  padding-top: 10px;
   font-family: "Exo", sans-serif;
+}
+
+.plan:hover {
+  text-decoration: none;
+}
+
+.card-date {
+  color: grey;
+  font-size: 24px;
+}
+
+.card-username {
+  align-self: flex-end;
+  padding-right: 20px;
+  margin-top: auto;
+  color: rgb(255, 0, 0);
+  font-size: 18px;
+  
 }
 
 .itineraryText {
   color: black;
   font-size: 20px;
-  overflow: auto;
-  position: absolute;
-  bottom: 0%;
-  opacity: 1;
   font-family: "Exo", sans-serif;
-  height: 50%;
-  text-align: center;
-  width: 100%;
+  padding: 15px 20px;
 }
 
 .login {
