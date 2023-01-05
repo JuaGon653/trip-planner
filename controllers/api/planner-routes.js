@@ -6,13 +6,21 @@ router.post('/', async (req, res) => {
     try {
         const newPlanner = await Planner.create({
             ...req.body,
-            user_id: req.session.user_id,
+            user_id: req.session.user.id,
         });
         res.status(200).json(newPlanner);
     } catch (err) {
         res.status(400).json(err);
     }
 });
+
+router.get('/', async (req, res) => {
+    try {
+        res.render('create-plan');
+    } catch (err) {
+        res.status(400).json(err);
+    }
+})
 
 module.exports = router;
 
