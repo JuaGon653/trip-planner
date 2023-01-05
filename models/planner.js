@@ -21,7 +21,6 @@ Planner.init(
     start_date: {
       type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: DataTypes.NOW,
     },
     end_date: {
       type: DataTypes.DATE,
