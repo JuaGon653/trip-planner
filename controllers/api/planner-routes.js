@@ -14,5 +14,19 @@ router.post('/', async (req, res) => {
     }
 });
 
+router.delete('/:id', async (req, res) => {
+    try {
+        const deletedPlan = await Planner.destroy({
+            where: {
+                id: req.params.id
+            }
+        });
+
+        res.status(200).json(deletedPlan);
+    } catch (err) {
+        res.status(400).json(err);;
+    }
+})
+
 module.exports = router;
 
