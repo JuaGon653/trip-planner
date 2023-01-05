@@ -2,11 +2,13 @@
     {
         "plan_name": "Winter Vacations Plans!",
         "description": "This Winter I will be traveling to the Swiss Alps on vactaion! Please do not contact me during these dates!",
+        "start_date": "2022-04-12T18:25:43.511Z",
         "end_date": 2022  
     },
     {
         "plan_name": "Summer Road Trip!",
         "description":"I will be driving to Vegas to place 300,000 on black on the roulette table",
+        "start_date": "2022-04-12T18:25:43.511Z",
         "end_date": 2023  
     }
 ]
