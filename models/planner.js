@@ -5,7 +5,7 @@ class Planner extends Model {}
 
 Planner.init(
   {
-    id: {
+    planId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
