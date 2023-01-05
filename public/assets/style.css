@@ -299,7 +299,7 @@ textarea {
 }
 
 #planSubmit:hover {
-  transition: .7s;
+  transition: .3s;
   cursor: pointer;
   color: white;
   border-color: black;
