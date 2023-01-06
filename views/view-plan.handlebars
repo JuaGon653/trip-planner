@@ -1,0 +1,30 @@
+<section class="card">
+  <!-- Links to specific plan by plan id -->
+  <h2 class="plan">
+    {{plan.plan_name}}
+  </h2>
+
+  <h2 class="card-date">{{format_date plan.start_date}} -  {{format_date plan.end_date}}</h2>
+
+  <h2 class="itineraryText">{{plan.description}}</h2>
+
+    <h2 class="card-username">- {{plan.user.username}}</h2>
+</section>
+
+{{#each plan.comments as |comment|}}
+{{> comments}}
+{{/each}}
+
+<div class="post-comment-div">
+    <h2>Post a comment</h2>
+    <form class="comment-form">
+        <div>
+        <input class="form-input" type="text" id="comment" />
+        </div>
+        <div>
+        <button class="btn btn-primary" type="submit" id="addComment">Add Comment</button>
+        </div>
+    </form>
+</div>
+
+<script src="/js/addComment.js"></script>

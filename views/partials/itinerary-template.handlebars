@@ -1,6 +1,6 @@
 <section class="card">
   <!-- Links to specific itinerary by itinerary id -->
-  <a class="plan" href="/itinerary/{{id}}">
+  <a class="plan" href={{view_plan_link planId}}>
     {{plan_name}}
   </a>
 
@@ -8,10 +8,7 @@
 
   <h2 class="itineraryText">{{description}}</h2>
 
-  {{#if my_plans}}
-  {{else}}
-    <h2 class="card-username">- {{user.username}}</h2>\
-  {{/if}}
+  <h2 class="card-username">- {{user.username}}</h2>
   
 
   {{#if my_plans}}
