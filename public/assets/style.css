@@ -118,6 +118,7 @@ nav {
   width: fit-content;
   font-size: 35px;
   padding-top: 10px;
+  color:#6ca0d4;
   font-family: "Exo", sans-serif;
 }
 
@@ -239,8 +240,7 @@ img{
   height: 25px;
   width: 25px;
   padding: 3px;
-  top: -160px;
-  left: -290px;
+  top: -10px;
   background-color: red;
   border-radius: 25px;
 }
@@ -304,4 +304,23 @@ textarea {
   color: white;
   border-color: black;
   background-color: #33495e;
+}
+
+.comment-div h6 {
+  align-self: end;
+  color: rgb(56, 56, 174)
+}
+
+.comment-div {
+  background-color: #6ca0d4;
+  border-radius: 15px;
+}
+
+.post-comment-div {
+  padding-top: 20px;
+  width: 50%;
+}
+
+#addComment:hover {
+  cursor: pointer;
 }
