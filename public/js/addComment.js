@@ -19,4 +19,11 @@ const addComment = async (event) => {
     }
 };
 
+const goBack = (event) => {
+    event.preventDefault();
+
+    history.back();
+};
+
+document.querySelector('#back-btn').addEventListener('click', goBack);
 document.querySelector('.comment-form').addEventListener('submit', addComment);
