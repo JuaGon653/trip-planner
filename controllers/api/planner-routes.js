@@ -18,13 +18,35 @@ router.delete('/:id', async (req, res) => {
     try {
         const deletedPlan = await Planner.destroy({
             where: {
-                id: req.params.id
+                planId: req.params.id
             }
         });
 
         res.status(200).json(deletedPlan);
     } catch (err) {
         res.status(400).json(err);;
+    }
+});
+
+router.put('/:id/update', async (req, res) => {
+    try {
+        const updatePlan = Planner.update(
+            {
+                plan_name: req.body.plan_name,
+                description: req.body.description,
+                start_date: req.body.start_date,
+                end_date: req.body.end_date
+            },
+            {
+                where: {
+                    plan_id: req.params.id
+                }
+            }
+        );
+
+        res.status(200).json(updatePlan);
+    } catch (err) {
+        res.status(500).json(err);
     }
 })
 
