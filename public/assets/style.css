@@ -223,7 +223,7 @@ nav {
 }
 
 ::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.6);
+  color: #ffffff99;
 }
 
 ::-moz-input-placeholder {
@@ -322,5 +322,25 @@ textarea {
 }
 
 #addComment:hover {
+  cursor: pointer;
+}
+
+#back-btn {
+  position: relative;
+  left: -40%;
+  width: 80px;
+  height: 30px;
+  border-radius: 10px;
+  border: 1px white solid;
+  font-size: 15px;
+  font-family: Arial;
+  background-color: #ffffff99;
+  transition: .5s;
+}
+
+#back-btn:hover {
+  transition: .5s;
+  background-color: #5a5a5a;
+  color: white;
   cursor: pointer;
 }
