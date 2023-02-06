@@ -2,7 +2,7 @@ const router = require('express').Router();
 const {Project, Planner} = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const newPlanner = await Planner.create({
             ...req.body,
@@ -14,7 +14,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
     try {
         const deletedPlan = await Planner.destroy({
             where: {
@@ -28,7 +28,7 @@ router.delete('/:id', async (req, res) => {
     }
 });
 
-router.put('/:id/update', async (req, res) => {
+router.put('/:id/update', withAuth, async (req, res) => {
     try {
         const updatePlan = Planner.update(
             {

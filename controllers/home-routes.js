@@ -3,7 +3,7 @@ const { User, Planner, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 //still need to add middleware but for now leave as is for testing
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const plannerData = await Planner.findAll({
             include: [
@@ -35,7 +35,7 @@ router.get('/signup', async (req, res) => {
     res.render('signup', { layout: false });
 });
 
-router.get('/my-plans', async (req, res) => {
+router.get('/my-plans', withAuth, async (req, res) => {
     try {
         const plannerData = await Planner.findAll({
             where: {
@@ -57,7 +57,7 @@ router.get('/my-plans', async (req, res) => {
     }
 });
 
-router.get('/create-plan', async (req, res) => {
+router.get('/create-plan', withAuth, async (req, res) => {
     try {
         res.render('create-plan', { logged_in: req.session.logged_in, creating_plan: true});
     } catch (err) {
@@ -65,7 +65,7 @@ router.get('/create-plan', async (req, res) => {
     }
 });
 
-router.get('/plan/:id/comments', async (req, res) => {
+router.get('/plan/:id/comments', withAuth, async (req, res) => {
     try {
         const planData = await Planner.findByPk(req.params.id, {
             include: [{
@@ -92,7 +92,7 @@ router.get('/plan/:id/comments', async (req, res) => {
     }
 });
 
-router.post('/plan/:id/add-comment', async (req, res) => {
+router.post('/plan/:id/add-comment', withAuth, async (req, res) => {
     try {
         const createdComment = await Comment.create({
             content: req.body.content,
